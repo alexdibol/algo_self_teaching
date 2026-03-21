@@ -1,1 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algorithmic Trading and Algorithmic Systems — Alejandro Reynoso</title>
+  <meta name="description" content="A self-teaching course on algorithmic trading and algorithmic systems. This repository contains the book, which serves as the main guide directing readers to the broader ecosystem of books, decks, videos, podcasts, and Colab notebooks across the author's GitHub." />
 
+  <style>
+    :root{
+      --bg:#07080d;
+      --panel:#0f1220;
+      --panel-2:#141836;
+      --text:#eef0ff;
+      --muted:#b8bddb;
+      --border:rgba(255,255,255,0.09);
+      --accent:#7aa2ff;
+      --accent2:#6ee7c8;
+      --warn:#ffd27a;
+      --shadow:0 18px 60px rgba(0,0,0,0.45);
+    }
+
+    *{box-sizing:border-box;}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(122,162,255,0.18), transparent 55%),
+        radial-gradient(800px 600px at 85% 20%, rgba(110,231,200,0.12), transparent 55%),
+        radial-gradient(900px 650px at 60% 95%, rgba(255,210,122,0.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
+
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{color:var(--accent2);text-decoration:underline;}
+
+    .container{
+      max-width:1160px;
+      margin:0 auto;
+      padding:32px 20px 84px;
+    }
+
+    .hero{
+      padding:42px 34px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(20,24,54,0.92), rgba(15,18,32,0.88));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(520px 360px at 16% 0%, rgba(122,162,255,0.18), transparent 60%),
+        radial-gradient(460px 330px at 92% 18%, rgba(110,231,200,0.10), transparent 60%),
+        radial-gradient(520px 360px at 55% 110%, rgba(255,210,122,0.08), transparent 60%);
+      pointer-events:none;
+      opacity:0.9;
+    }
+
+    .hero > *{position:relative;}
+
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .hero h1{
+      font-size:40px;
+      margin:12px 0 12px;
+      line-height:1.12;
+      max-width:18ch;
+      text-transform:uppercase;
+      letter-spacing:0.02em;
+    }
+
+    .subtitle{
+      margin:0;
+      max-width:96ch;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.03);
+      color:var(--text);
+      font-weight:700;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+      border-color:rgba(122,162,255,0.35);
+      background:rgba(20,24,54,0.86);
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .button.primary{
+      background:linear-gradient(135deg, rgba(122,162,255,0.20), rgba(110,231,200,0.12));
+      border-color:rgba(122,162,255,0.30);
+    }
+
+    .section{margin-top:56px;}
+
+    .section h2{
+      font-size:28px;
+      margin:0 0 14px;
+      letter-spacing:-0.02em;
+    }
+
+    .section p{
+      color:var(--muted);
+      max-width:96ch;
+      margin:10px 0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .card{
+      padding:20px;
+      border-radius:18px;
+      background:rgba(20,24,54,0.72);
+      border:1px solid var(--border);
+      box-shadow:0 10px 30px rgba(0,0,0,0.30);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .card p{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .linkcard{
+      display:block;
+      cursor:pointer;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .linkcard:hover{
+      transform:translateY(-2px);
+      border-color:rgba(122,162,255,0.35);
+      background:rgba(20,24,54,0.86);
+      text-decoration:none;
+    }
+
+    .hint{
+      margin-top:12px;
+      font-size:12px;
+      color:var(--muted);
+      opacity:0.92;
+      font-weight:700;
+      letter-spacing:0.02em;
+    }
+
+    .callout{
+      margin-top:18px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(122,162,255,0.18);
+      background:linear-gradient(135deg, rgba(122,162,255,0.06), rgba(110,231,200,0.04));
+      color:var(--muted);
+      max-width:96ch;
+    }
+
+    .callout strong{color:var(--text);}
+
+    .list{
+      margin-top:18px;
+      padding-left:22px;
+      color:var(--muted);
+      max-width:96ch;
+    }
+
+    .list li{margin-bottom:12px;}
+    .list strong{color:var(--text);}
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+      max-width:96ch;
+    }
+
+    .footer{
+      margin-top:80px;
+      padding-top:24px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <section class="hero">
+      <div class="kicker">Self-teaching architecture · Algorithmic trading · Systems engineering · Governed strategy research</div>
+      <h1>Algorithmic Trading and Algorithmic Systems</h1>
+
+      <p class="subtitle">
+        A self-teaching course on algorithmic trading built as a multilevel learning architecture. This repository
+        contains the book for the course. That book is the main guide: it provides conceptual orientation,
+        chapter-by-chapter structure, and links that direct readers toward the broader ecosystem of books, decks,
+        podcasts, video presentations, and executable Colab notebooks distributed across the author's GitHub.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/alexdibol/algo_self_teaching" target="_blank" rel="noopener">Open Book Repository</a>
+        <a class="button" href="https://github.com/alexdibol/algo_self_teaching/blob/main/book/SELF_TEACHING_ALGO_SYSTEMS.pdf" target="_blank" rel="noopener">Open Course Book</a>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <h2>What This Repository Actually Contains</h2>
+      <p>
+        This landing page is intentionally honest: the repository does <strong>not</strong> contain the full archive
+        of every course asset in one place. It contains the <strong>book</strong>, and that book serves as the
+        intellectual backbone and navigation layer for a much broader educational ecosystem.
+      </p>
+      <p>
+        The reader is expected to use the book actively. Through its structure, explanations, and links, the learner
+        is guided toward a wider body of associated materials, including additional books, decks, podcasts, videos,
+        and Google Colab notebooks connected to the three pillars of the course.
+      </p>
+
+      <div class="callout">
+        <strong>In practical terms:</strong> this repository is the guided entry point, not the complete warehouse.
+        The full experience depends on reading the book and following the links embedded throughout it.
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <h2>The Multilevel Learning Architecture</h2>
+      <p>
+        The course is deliberately multilevel because algorithmic trading cannot be learned well through a single
+        medium. The written chapters provide depth and continuity. Decks compress ideas into structure and recall.
+        Podcasts and videos provide guided explanation and pacing. Colab notebooks provide executable confrontation
+        with code, friction, stress, and failure.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Books</h3>
+          <p>The repository contains the written guide that provides conceptual depth, continuity, and orientation.</p>
+        </div>
+        <div class="card">
+          <h3>Decks</h3>
+          <p>Slide decks provide compression, structure, and recall, and are reached through the book’s references.</p>
+        </div>
+        <div class="card">
+          <h3>Podcasts and Videos</h3>
+          <p>These layers add guided explanation, pacing, and interpretive narrative to difficult material.</p>
+        </div>
+        <div class="card">
+          <h3>Executable Colab Notebooks</h3>
+          <p>These are the experimental core of the course, where ideas are implemented, stressed, and made real.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Important distinction:</strong> the full course uses all four layers. This repository contains the
+        book layer that directs the learner to the rest.
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <h2>Why Algorithmic Trading Needs a Different Kind of Course</h2>
+      <p>
+        Algorithmic trading lives at the intersection of finance, programming, market structure, experimentation,
+        execution, and governance. A learner can know finance and still fail because they do not understand leakage,
+        sequencing, and execution realism. A learner can know programming and still fail because they do not
+        understand microstructure, liquidity, and regime change. A learner can know markets and still fail because
+        intuition without disciplined system design quickly becomes narrative overfitting.
+      </p>
+      <p>
+        This course was designed precisely to address that structural problem. It teaches algorithmic trading not as
+        a bag of indicators or a social-media backtest theater, but as a complete engineering discipline built around
+        causal integrity, implementation realism, risk discipline, and governed research.
+      </p>
+    </section>
+
+    <section class="section" id="pillars">
+      <h2>The Three Pillars of the Course</h2>
+      <p>
+        The course is organized into three pillars because professional understanding in algorithmic trading must
+        develop in stages. Each pillar answers a different question and builds a different layer of maturity.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Pillar 1. Foundations of Algorithmic Trading Systems Engineering</h3>
+          <p>
+            This pillar builds the grammar of serious system construction: market data, feature engineering,
+            backtesting, event timing, transaction costs, risk overlays, model selection, robustness, reinforcement
+            learning under constraints, and regime detection.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Pillar 2. Governed Strategy Laboratories for Algorithmic Trading</h3>
+          <p>
+            This pillar studies strategies as governed laboratory objects rather than ready-made alpha products.
+            Momentum, reversal, seasonality, breakout logic, order flow, and synthetic futures structures are treated
+            as testable hypotheses under discipline.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Pillar 3. Market Mechanisms and Execution Reality for Traders</h3>
+          <p>
+            This pillar moves beneath strategy families into deeper market machinery: crypto fragmentation, oil curves,
+            FX carry surfaces, rates, credit, volatility surfaces, liquidity, cross-asset coupling, and systemic
+            stress dynamics.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>The sequence is intentional:</strong> Pillar 1 prevents naïveté. Pillar 2 prevents superficiality.
+        Pillar 3 prevents category error.
+      </div>
+    </section>
+
+    <section class="section" id="use">
+      <h2>How to Use This Repository</h2>
+      <p>
+        The intended workflow is straightforward but important. Begin with the book. Use it to understand the
+        structure of the curriculum, the logic of each pillar, and the meaning of the chapters. Then follow the links
+        inside the book to reach the wider content ecosystem.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Step 1: Read the Book</h3>
+          <p>Use the book for conceptual framing, chapter orientation, and course structure.</p>
+        </div>
+        <div class="card">
+          <h3>Step 2: Follow the Links</h3>
+          <p>Use the links inside the book to access associated books, decks, podcasts, videos, and notebooks.</p>
+        </div>
+        <div class="card">
+          <h3>Step 3: Move Iteratively</h3>
+          <p>Return to the book after exploring linked materials so that theory and implementation reinforce each other.</p>
+        </div>
+      </div>
+
+      <ul class="list">
+        <li><strong>This landing page directs you to the book.</strong></li>
+        <li><strong>The book directs you to the broader course ecosystem.</strong></li>
+        <li><strong>The learner must navigate the book to access the full depth of the course.</strong></li>
+      </ul>
+    </section>
+
+    <section class="section" id="scope">
+      <h2>What the Broader Course Covers</h2>
+      <p>
+        Although this repository contains the book layer, the larger course covers a wide range of topics required for
+        serious algorithmic trading formation.
+      </p>
+
+      <ul class="list">
+        <li><strong>Systems engineering foundations:</strong> market data, pipelines, feature construction, backtesting, event timing, and execution realism.</li>
+        <li><strong>Control and governance:</strong> transaction costs, slippage, leverage, position sizing, model selection, robustness, and auditable workflows.</li>
+        <li><strong>Advanced modeling:</strong> reinforcement learning under constraints and regime detection under causal integrity.</li>
+        <li><strong>Governed strategy laboratories:</strong> momentum, reversal, seasonality, breakout systems, order flow, style rotation, and synthetic futures logic.</li>
+        <li><strong>Deeper market mechanisms:</strong> crypto, oil, FX carry, rates curves, credit surfaces, volatility surfaces, liquidity structures, and systemic stress.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="audience">
+      <h2>Who This Is For</h2>
+      <p>
+        This course is for serious learners who want more than commentary, more than code snippets, and more than
+        decorative backtests. It is designed for finance professionals, researchers, programmers, systematic learners,
+        and students who want theory and implementation taught together rather than separately.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Finance Professionals</h3>
+          <p>For practitioners who want to understand how algorithmic systems are actually built, tested, and governed.</p>
+        </div>
+        <div class="card">
+          <h3>Researchers and Programmers</h3>
+          <p>For people who need stronger mechanism design, experimental discipline, and market-aware implementation logic.</p>
+        </div>
+        <div class="card">
+          <h3>Students and Systematic Traders</h3>
+          <p>For learners who want a curriculum that does not separate conceptual understanding from executable practice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mindset">
+      <h2>The Intended Mindset</h2>
+      <p>
+        This course is not structured as a hunt for the best strategy. It is structured as a re-education in how
+        algorithmic trading should be understood. The goal is not to collect techniques, but to build a framework that
+        makes techniques interpretable, testable, and survivable.
+      </p>
+      <p>
+        The learner is invited to become a builder of judgment: read carefully, code honestly, test aggressively, and
+        distrust beauty until it survives contact with friction.
+      </p>
+
+      <div class="callout">
+        <strong>Core principle:</strong> everything in algorithmic trading rests on the integrity of the chain from
+        data to decision to execution to evaluation.
+      </div>
+    </section>
+
+    <section class="section" id="repositories">
+      <h2>Source Repositories Behind the Course</h2>
+      <p>
+        The book presentation explains that the broader course is grounded in a wider integrated body of material and
+        in dedicated repositories associated with the three pillars.
+      </p>
+
+      <div class="grid">
+        <a class="card linkcard" href="https://alexdibol.github.io/algo_systems/" target="_blank" rel="noopener">
+          <h3>General Course Foundation</h3>
+          <p>The broader integrated body of material behind the course architecture.</p>
+          <div class="hint">Open site →</div>
+        </a>
+
+        <a class="card linkcard" href="https://alexdibol.github.io/ai-algo-trading-notebooks/" target="_blank" rel="noopener">
+          <h3>Pillar 1 Source</h3>
+          <p>Foundations of algorithmic trading systems engineering.</p>
+          <div class="hint">Open Pillar 1 →</div>
+        </a>
+
+        <a class="card linkcard" href="https://alexdibol.github.io/algo_strategies/" target="_blank" rel="noopener">
+          <h3>Pillar 2 Source</h3>
+          <p>Governed strategy laboratories for algorithmic trading.</p>
+          <div class="hint">Open Pillar 2 →</div>
+        </a>
+
+        <a class="card linkcard" href="https://alexdibol.github.io/markets_for_traders/" target="_blank" rel="noopener">
+          <h3>Pillar 3 Source</h3>
+          <p>Market mechanisms and execution reality for traders.</p>
+          <div class="hint">Open Pillar 3 →</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="navigation">
+      <h2>Repository Navigation</h2>
+      <p>
+        This landing page points the reader to the book repository and the course PDF. The broader ecosystem is reached
+        from within the book itself.
+      </p>
+
+      <div class="grid">
+        <a class="card linkcard" href="https://github.com/alexdibol/algo_self_teaching" target="_blank" rel="noopener">
+          <h3>Book Repository</h3>
+          <p>Main entry point for the course book and the guided navigation layer of the broader ecosystem.</p>
+          <div class="hint">Open repository →</div>
+        </a>
+
+        <a class="card linkcard" href="https://github.com/alexdibol/algo_self_teaching/blob/main/book/SELF_TEACHING_ALGO_SYSTEMS.pdf" target="_blank" rel="noopener">
+          <h3>Course Book PDF</h3>
+          <p>Read the book first, then use its internal links and chapter references to move through the full course.</p>
+          <div class="hint">Open PDF →</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="disclaimer">
+      <h2>Important Notes</h2>
+
+      <p class="small">
+        <strong>Honest scope statement:</strong> this repository contains the book, not the entire inventory of course assets.
+      </p>
+
+      <p class="small">
+        <strong>User responsibility:</strong> to access the full learning ecosystem, the reader must navigate the book and use its links.
+      </p>
+
+      <p class="small">
+        <strong>Educational purpose:</strong> this repository is designed as a self-teaching and professional development platform for algorithmic trading and algorithmic systems.
+      </p>
+
+      <p class="small">
+        <strong>Professional orientation:</strong> strategies should be treated as governed research objects, not as self-validating backtests.
+      </p>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Alejandro Reynoso · Algorithmic Trading and Algorithmic Systems
+      <br/>Book repository for a broader self-teaching course ecosystem
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
