@@ -3,7 +3,7 @@
 
 **Author:** Alejandro Reynoso
 
-This repository contains the **book** for a self-teaching course on **algorithmic trading and algorithmic systems**. The course is designed not as a collection of trading tricks, indicator recipes, or isolated backtests, but as a structured educational system for learning how algorithmic trading strategies are built, tested, governed, and interpreted as full decision architectures. The uploaded course book explicitly frames the subject as a complete engineering discipline and organizes the material into a multi-layer learning architecture built around books, decks, podcasts, videos, and executable notebooks. :contentReference[oaicite:0]{index=0}
+This repository contains the **book** for a self-teaching course on **algorithmic trading and algorithmic systems**. The course is designed not as a collection of trading tricks, indicator recipes, or isolated backtests, but as a structured educational system for learning how algorithmic trading strategies are built, tested, governed, and interpreted as full decision architectures. The uploaded course book explicitly frames the subject as a complete engineering discipline and organizes the material into a multi-layer learning architecture built around books, decks, podcasts, videos, and executable notebooks. 
 
 This repository is therefore **not the complete storage location for all course assets**. Instead, it serves as the **central written guide and orientation document** for a broader educational ecosystem distributed across the author’s GitHub materials and linked resources.
 
@@ -20,7 +20,7 @@ This repository is therefore **not the complete storage location for all course 
 
 This repository contains the **book component** of the course.
 
-That book is designed to do more than provide conceptual explanation. It also serves as a **navigation map** for the broader body of associated materials connected to the course. Throughout the book, the reader is introduced to the larger educational architecture and to the logic of the three main pillars of the curriculum. :contentReference[oaicite:1]{index=1}
+That book is designed to do more than provide conceptual explanation. It also serves as a **navigation map** for the broader body of associated materials connected to the course. Throughout the book, the reader is introduced to the larger educational architecture and to the logic of the three main pillars of the curriculum. 
 
 These additional materials include:
 
@@ -36,7 +36,7 @@ In that sense, this repository should be understood as the **entry point and int
 
 ## How the Course Is Structured
 
-The book presents the course as a **self-teaching architecture** built around multiple complementary formats. It explains that written chapters provide conceptual depth and continuity, decks provide compression and visual orientation, podcasts and videos provide guided explanation, and Colab notebooks provide executable implementation and experimentation. :contentReference[oaicite:2]{index=2}
+The book presents the course as a **self-teaching architecture** built around multiple complementary formats. It explains that written chapters provide conceptual depth and continuity, decks provide compression and visual orientation, podcasts and videos provide guided explanation, and Colab notebooks provide executable implementation and experimentation. 
 
 The broader learning system includes:
 
@@ -51,16 +51,16 @@ This repository houses the **book layer**, but the book itself directs the learn
 
 ## The Three Pillars of the Course
 
-The course book is organized around **three major pillars**, each corresponding to a different stage of professional maturity in algorithmic trading. :contentReference[oaicite:3]{index=3}
+The course book is organized around **three major pillars**, each corresponding to a different stage of professional maturity in algorithmic trading.
 
 ### Pillar 1. Foundations of Algorithmic Trading Systems Engineering
-This pillar teaches the grammar of serious system building. It covers market data, feature engineering, backtesting, event-driven trading, transaction costs, risk controls, model selection, robustness, reinforcement learning, and regime detection. Its role is to prevent naive system design and to establish disciplined engineering habits from the start. :contentReference[oaicite:4]{index=4}
+This pillar teaches the grammar of serious system building. It covers market data, feature engineering, backtesting, event-driven trading, transaction costs, risk controls, model selection, robustness, reinforcement learning, and regime detection. Its role is to prevent naive system design and to establish disciplined engineering habits from the start. 
 
 ### Pillar 2. Governed Strategy Laboratories for Algorithmic Trading
-This pillar shifts from foundations to concrete strategy laboratories. Strategies are treated not as magical alpha products, but as governed research objects. Momentum, reversal, seasonality, style rotation, order flow, breakout systems, and futures-style structures are studied as mechanisms that must survive feasibility, stress, and execution reality. :contentReference[oaicite:5]{index=5}
+This pillar shifts from foundations to concrete strategy laboratories. Strategies are treated not as magical alpha products, but as governed research objects. Momentum, reversal, seasonality, style rotation, order flow, breakout systems, and futures-style structures are studied as mechanisms that must survive feasibility, stress, and execution reality.
 
 ### Pillar 3. Market Mechanisms and Execution Reality for Traders
-This pillar goes deeper into the underlying machinery of markets. It studies crypto market structure, oil futures curves, FX carry surfaces, rates, credit, volatility surfaces, order flow, cross-asset coupling, and systemic stress. Its purpose is to show that strategies live or die within deeper structural environments that must be understood directly. :contentReference[oaicite:6]{index=6}
+This pillar goes deeper into the underlying machinery of markets. It studies crypto market structure, oil futures curves, FX carry surfaces, rates, credit, volatility surfaces, order flow, cross-asset coupling, and systemic stress. Its purpose is to show that strategies live or die within deeper structural environments that must be understood directly. 
 
 ---
 
@@ -86,7 +86,7 @@ A practical learning sequence is:
 3. Use those links to access the related decks, podcasts, videos, and notebooks.
 4. Move back and forth between conceptual explanation and executable implementation.
 
-This is consistent with the educational philosophy described in the course presentation: understanding should move recursively between explanation and execution rather than remain trapped in either theory alone or code alone. :contentReference[oaicite:7]{index=7}
+This is consistent with the educational philosophy described in the course presentation: understanding should move recursively between explanation and execution rather than remain trapped in either theory alone or code alone.
 
 ---
 
@@ -99,13 +99,13 @@ Because the broader course spans a substantial amount of material, the book play
 - how it fits into algorithmic systems engineering,
 - and where to go next in the larger body of resources.
 
-Without that written orientation, the wider ecosystem could feel fragmented. With the book, the learner has a structured route through a rich and abundant collection of materials. This role is stated clearly in the course presentation, which emphasizes the multilevel architecture and the complementary relationship among formats. :contentReference[oaicite:8]{index=8}
+Without that written orientation, the wider ecosystem could feel fragmented. With the book, the learner has a structured route through a rich and abundant collection of materials. This role is stated clearly in the course presentation, which emphasizes the multilevel architecture and the complementary relationship among formats.
 
 ---
 
 ## Course Vision
 
-This course was built to address a specific educational gap. Much algorithmic trading material is either too theoretical to become executable, too technical to become conceptually coherent, or too promotional to be intellectually trustworthy. The course book explicitly positions this curriculum as a response to that fragmentation by treating algorithmic trading as a full engineering discipline rather than a collection of tricks or fashionable slogans. :contentReference[oaicite:9]{index=9}
+This course was built to address a specific educational gap. Much algorithmic trading material is either too theoretical to become executable, too technical to become conceptually coherent, or too promotional to be intellectually trustworthy. The course book explicitly positions this curriculum as a response to that fragmentation by treating algorithmic trading as a full engineering discipline rather than a collection of tricks or fashionable slogans.
 
 The course therefore teaches algorithmic trading as:
 
@@ -120,13 +120,13 @@ The course therefore teaches algorithmic trading as:
 ## What Makes the Broader Course Different
 
 ### 1. It is self-teaching by design
-The course is intentionally structured so that a motivated learner can progress independently through books, decks, podcasts, videos, and notebooks. The book explicitly describes this architecture as a self-teaching system rather than a single linear text. :contentReference[oaicite:10]{index=10}
+The course is intentionally structured so that a motivated learner can progress independently through books, decks, podcasts, videos, and notebooks. The book explicitly describes this architecture as a self-teaching system rather than a single linear text.
 
 ### 2. It treats algorithmic trading as engineering, not folklore
-The course rejects the idea that algorithmic trading is mainly about indicators, charts, or isolated backtests. It instead presents the field as an integrated architecture involving data definitions, feature logic, causal timing, execution assumptions, risk overlays, and governance artifacts. :contentReference[oaicite:11]{index=11}
+The course rejects the idea that algorithmic trading is mainly about indicators, charts, or isolated backtests. It instead presents the field as an integrated architecture involving data definitions, feature logic, causal timing, execution assumptions, risk overlays, and governance artifacts.
 
 ### 3. Governance is built into the learning process
-The book repeatedly emphasizes that governance, risk, and discipline are not optional side themes. They are part of model validity from the beginning. Explicit assumptions, deterministic experiments, realistic costs, auditable logic, and disciplined backtesting are part of the course’s core educational logic. :contentReference[oaicite:12]{index=12}
+The book repeatedly emphasizes that governance, risk, and discipline are not optional side themes. They are part of model validity from the beginning. Explicit assumptions, deterministic experiments, realistic costs, auditable logic, and disciplined backtesting are part of the course’s core educational logic.
 
 ### 4. The repository is part of a wider ecosystem
 This repository contains the book, but the book itself points toward a larger landscape of additional resources created by the author. It is therefore both a teaching document and a navigation instrument.
@@ -135,7 +135,7 @@ This repository contains the book, but the book itself points toward a larger la
 
 ## Intended Audience
 
-This course is designed for serious learners who want more than commentary, code snippets, or backtest theater. The course presentation identifies the audience broadly as finance professionals, researchers, programmers, discretionary traders becoming more systematic, and students entering the field who want theory and implementation taught together rather than separately. :contentReference[oaicite:13]{index=13}
+This course is designed for serious learners who want more than commentary, code snippets, or backtest theater. The course presentation identifies the audience broadly as finance professionals, researchers, programmers, discretionary traders becoming more systematic, and students entering the field who want theory and implementation taught together rather than separately. 
 
 It is especially useful for:
 
@@ -160,13 +160,13 @@ That means:
 - exploring the connected resources,
 - and moving repeatedly between explanation and implementation.
 
-The book itself recommends active cycling among media: read the chapter, inspect the deck, listen to the explanation, and then run the notebook. That recursive structure is part of the course design. :contentReference[oaicite:14]{index=14}
+The book itself recommends active cycling among media: read the chapter, inspect the deck, listen to the explanation, and then run the notebook. That recursive structure is part of the course design. 
 
 ---
 
 ## Skills the Learner Should Expect to Build
 
-According to the course presentation, a serious learner should expect to build multiple categories of skill through this program. These include: conceptual skill, practical system-building skill, coding skill, research skill, and professional judgment. :contentReference[oaicite:15]{index=15}
+According to the course presentation, a serious learner should expect to build multiple categories of skill through this program. These include: conceptual skill, practical system-building skill, coding skill, research skill, and professional judgment. 
 
 In practical terms, learners should become better able to:
 
@@ -199,7 +199,7 @@ The best way to approach this repository is to treat the book not as the end of 
 
 Read first. Then follow the relevant references. Then move into supporting materials. Then return to the book with deeper understanding.
 
-That iterative loop is part of the course design and reflects the reality of professional learning in algorithmic trading, where understanding improves through repeated confrontation with concept, code, friction, and mechanism. :contentReference[oaicite:16]{index=16}
+That iterative loop is part of the course design and reflects the reality of professional learning in algorithmic trading, where understanding improves through repeated confrontation with concept, code, friction, and mechanism. 
 
 ---
 
