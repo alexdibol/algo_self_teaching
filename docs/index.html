@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Algorithmic Trading and Algorithmic Systems — Alejandro Reynoso</title>
-  <meta name="description" content="A self-teaching course on algorithmic trading and algorithmic systems. This repository contains the book, which serves as the main guide directing readers to the broader ecosystem of books, decks, videos, podcasts, and Colab notebooks across the author's GitHub." />
+  <meta name="description" content="A self-teaching course on algorithmic trading and algorithmic systems. This repository contains the book, which serves as the main guide directing readers to the broader ecosystem of books, decks, videos, podcasts, Colab notebooks, and the methodological bridge from research to implementation using agents." />
 
   <style>
     :root{
@@ -100,7 +100,7 @@
       font-size:40px;
       margin:12px 0 12px;
       line-height:1.12;
-      max-width:18ch;
+      max-width:20ch;
       text-transform:uppercase;
       letter-spacing:0.02em;
     }
@@ -260,18 +260,21 @@
   <main class="container">
 
     <section class="hero">
-      <div class="kicker">Self-teaching architecture · Algorithmic trading · Systems engineering · Governed strategy research</div>
+      <div class="kicker">Self-teaching architecture · Algorithmic trading · Systems engineering · Governed strategy research · Research-to-implementation bridge</div>
       <h1>Algorithmic Trading and Algorithmic Systems</h1>
 
       <p class="subtitle">
         A self-teaching course on algorithmic trading built as a multilevel learning architecture. This repository
         contains the book for the course. That book is the main guide: it provides conceptual orientation,
         chapter-by-chapter structure, and links that direct readers toward the broader ecosystem of books, decks,
-        podcasts, video presentations, and executable Colab notebooks distributed across the author's GitHub.
+        podcasts, video presentations, executable Colab notebooks, and a dedicated methodological bridge that shows
+        how to move from research to implementation using agents under governance, transparency, accountability,
+        and defensibility.
       </p>
 
       <div class="hero-actions">
-        <a class="button" href="https://github.com/alexdibol/algo_self_teaching/blob/main/book/SELF_TEACHING_ALGO_SYSTEMS.pdf" target="_blank" rel="noopener">Open Course Book</a>
+        <a class="button primary" href="https://github.com/alexdibol/algo_self_teaching/blob/main/book/SELF_TEACHING_ALGO_SYSTEMS.pdf" target="_blank" rel="noopener">Open Course Book</a>
+        <a class="button" href="https://github.com/alexdibol/algo_self_teaching/tree/main/agents" target="_blank" rel="noopener">Open Methodological Bridge</a>
       </div>
     </section>
 
@@ -286,12 +289,14 @@
         <p>
           The reader is expected to use the book actively. Through its structure, explanations, and links, the learner
           is guided toward a wider body of associated materials, including additional books, decks, podcasts, videos,
-          and Google Colab notebooks connected to the three pillars of the course.
+          Google Colab notebooks connected to the three pillars of the course, and the methodological bridge devoted
+          to the transition from research to implementation through agentic workflows.
         </p>
 
         <div class="callout">
           <strong>In practical terms:</strong> this repository is the guided entry point, not the complete warehouse.
-          The full experience depends on reading the book and following the links embedded throughout it.
+          The full experience depends on reading the book and following the links embedded throughout it, including the
+          bridge materials that connect exploratory research with disciplined implementation.
         </div>
       </div>
     </section>
@@ -304,6 +309,11 @@
           medium. The written chapters provide depth and continuity. Decks compress ideas into structure and recall.
           Podcasts and videos provide guided explanation and pacing. Colab notebooks provide executable confrontation
           with code, friction, stress, and failure.
+        </p>
+        <p>
+          To these layers, the course now adds a distinct methodological component: a bridge that uses specialized
+          agents to help the learner move from research artifacts toward implementation-ready systems without surrendering
+          governance, reviewability, or human responsibility.
         </p>
 
         <div class="grid">
@@ -323,11 +333,59 @@
             <h3>Executable Colab Notebooks</h3>
             <p>These are the experimental core of the course, where ideas are implemented, stressed, and made real.</p>
           </div>
+          <div class="card">
+            <h3>Methodological Bridge</h3>
+            <p>A dedicated book-and-notebook layer that shows how AI agents can bridge research and implementation under explicit governance.</p>
+          </div>
         </div>
 
         <div class="callout">
-          <strong>Important distinction:</strong> the full course uses all four layers. This repository contains the
-          book layer that directs the learner to the rest.
+          <strong>Important distinction:</strong> the full course uses multiple layers together. This repository contains the
+          book layer that directs the learner to the rest, including the cross-pillar bridge from research to implementation.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bridge">
+      <div class="section-block">
+        <h2>The Methodological Bridge: From Research to Implementation Using Agents</h2>
+        <p>
+          In addition to the three thematic pillars, the course now includes a methodological bridge devoted to one of
+          the central problems of modern systematic trading: how to move from research environments to implementation
+          environments without losing semantic clarity, governance discipline, or institutional defensibility.
+        </p>
+        <p>
+          This bridge is not a thematic pillar in the same sense as the others. It is a cross-cutting layer. Its role
+          is to connect research notebooks, strategy ideas, code generation, strategy interpretation, governance review,
+          and implementation migration into one coherent lifecycle.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Code Generator Agent</h3>
+            <p>Helps transform research intent, pseudocode, or strategic hypotheses into platform-aware implementation drafts.</p>
+          </div>
+          <div class="card">
+            <h3>Report Generator Agent</h3>
+            <p>Turns code into disciplined explanatory prose so that a strategy becomes intelligible, reviewable, and discussable.</p>
+          </div>
+          <div class="card">
+            <h3>Governance Evaluator Agent</h3>
+            <p>Tests semantic sufficiency, liveness, robustness, and fail-closed logic before a strategy is treated as serious.</p>
+          </div>
+          <div class="card">
+            <h3>Research-to-Implementation Converter</h3>
+            <p>Bridges exploratory notebook work and structured implementation by making adaptations explicit rather than hidden.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>What this bridge adds:</strong> it introduces AI not as decorative automation, but as a governed method
+          for moving from research to implementation with transparency, accountability, and defensibility.
+        </div>
+
+        <div class="hero-actions" style="margin-top:20px;">
+          <a class="button primary" href="https://github.com/alexdibol/algo_self_teaching/tree/main/agents" target="_blank" rel="noopener">Open Bridge Book and Notebooks</a>
         </div>
       </div>
     </section>
@@ -345,7 +403,8 @@
         <p>
           This course was designed precisely to address that structural problem. It teaches algorithmic trading not as
           a bag of indicators or a social-media backtest theater, but as a complete engineering discipline built around
-          causal integrity, implementation realism, risk discipline, and governed research.
+          causal integrity, implementation realism, risk discipline, governed research, and now also the disciplined
+          translation of research into implementation through agentic but human-accountable workflows.
         </p>
       </div>
     </section>
@@ -387,7 +446,7 @@
 
         <div class="callout">
           <strong>The sequence is intentional:</strong> Pillar 1 prevents naïveté. Pillar 2 prevents superficiality.
-          Pillar 3 prevents category error.
+          Pillar 3 prevents category error. The methodological bridge then connects all three to the problem of actual implementation.
         </div>
       </div>
     </section>
@@ -408,18 +467,23 @@
           </div>
           <div class="card">
             <h3>Step 2: Follow the Links</h3>
-            <p>Use the links inside the book to access associated books, decks, podcasts, videos, and notebooks.</p>
+            <p>Use the links inside the book to access associated books, decks, podcasts, videos, notebooks, and bridge materials.</p>
           </div>
           <div class="card">
-            <h3>Step 3: Move Iteratively</h3>
-            <p>Return to the book after exploring linked materials so that theory and implementation reinforce each other.</p>
+            <h3>Step 3: Work Across Layers</h3>
+            <p>Move iteratively between explanation, code, notebooks, and market structure so that theory and implementation reinforce each other.</p>
+          </div>
+          <div class="card">
+            <h3>Step 4: Use the Bridge</h3>
+            <p>When ready, use the agentic bridge to understand how research artifacts become interpretable, governed, implementation-aware systems.</p>
           </div>
         </div>
 
         <ul class="list">
           <li><strong>This landing page directs you to the book.</strong></li>
           <li><strong>The book directs you to the broader course ecosystem.</strong></li>
-          <li><strong>The learner must navigate the book to access the full depth of the course.</strong></li>
+          <li><strong>The bridge materials help connect research activity to implementation discipline.</strong></li>
+          <li><strong>The learner must navigate the book and its links to access the full depth of the course.</strong></li>
         </ul>
       </div>
     </section>
@@ -438,6 +502,7 @@
           <li><strong>Advanced modeling:</strong> reinforcement learning under constraints and regime detection under causal integrity.</li>
           <li><strong>Governed strategy laboratories:</strong> momentum, reversal, seasonality, breakout systems, order flow, style rotation, and synthetic futures logic.</li>
           <li><strong>Deeper market mechanisms:</strong> crypto, oil, FX carry, rates curves, credit surfaces, volatility surfaces, liquidity structures, and systemic stress.</li>
+          <li><strong>Research-to-implementation methodology:</strong> agentic workflows that connect exploratory notebooks, code generation, interpretation, governance evaluation, and implementation migration.</li>
         </ul>
       </div>
     </section>
@@ -454,15 +519,15 @@
         <div class="grid">
           <div class="card">
             <h3>Finance Professionals</h3>
-            <p>For practitioners who want to understand how algorithmic systems are actually built, tested, and governed.</p>
+            <p>For practitioners who want to understand how algorithmic systems are actually built, tested, governed, and translated into defensible workflows.</p>
           </div>
           <div class="card">
             <h3>Researchers and Programmers</h3>
-            <p>For people who need stronger mechanism design, experimental discipline, and market-aware implementation logic.</p>
+            <p>For people who need stronger mechanism design, experimental discipline, market-aware implementation logic, and a bridge from notebook research to production-facing structure.</p>
           </div>
           <div class="card">
             <h3>Students and Systematic Traders</h3>
-            <p>For learners who want a curriculum that does not separate conceptual understanding from executable practice.</p>
+            <p>For learners who want a curriculum that does not separate conceptual understanding from executable practice and implementation accountability.</p>
           </div>
         </div>
       </div>
@@ -474,16 +539,18 @@
         <p>
           This course is not structured as a hunt for the best strategy. It is structured as a re-education in how
           algorithmic trading should be understood. The goal is not to collect techniques, but to build a framework that
-          makes techniques interpretable, testable, and survivable.
+          makes techniques interpretable, testable, survivable, and implementation-aware.
         </p>
         <p>
-          The learner is invited to become a builder of judgment: read carefully, code honestly, test aggressively, and
-          distrust beauty until it survives contact with friction.
+          The learner is invited to become a builder of judgment: read carefully, code honestly, test aggressively,
+          distrust beauty until it survives contact with friction, and treat the path from research to implementation
+          as something that must also be governed rather than improvised.
         </p>
 
         <div class="callout">
           <strong>Core principle:</strong> everything in algorithmic trading rests on the integrity of the chain from
-          data to decision to execution to evaluation.
+          data to decision to execution to evaluation. The new methodological bridge extends that chain explicitly from
+          research to implementation.
         </div>
       </div>
     </section>
@@ -520,6 +587,12 @@
             <p>Market mechanisms and execution reality for traders.</p>
             <div class="hint">Open Pillar 3 →</div>
           </a>
+
+          <a class="card linkcard" href="https://github.com/alexdibol/algo_self_teaching/tree/main/agents" target="_blank" rel="noopener">
+            <h3>Methodological Bridge</h3>
+            <p>Book and accompanying notebooks for moving from research to implementation using agents under governance.</p>
+            <div class="hint">Open bridge →</div>
+          </a>
         </div>
       </div>
     </section>
@@ -543,12 +616,16 @@
         <p class="small">
           <strong>Professional orientation:</strong> strategies should be treated as governed research objects, not as self-validating backtests.
         </p>
+
+        <p class="small">
+          <strong>Bridge orientation:</strong> AI is introduced here as a methodological tool for disciplined translation from research to implementation, always under transparency, accountability, governance, and human review.
+        </p>
       </div>
     </section>
 
     <footer class="footer">
       © <span id="year"></span> Alejandro Reynoso · Algorithmic Trading and Algorithmic Systems
-      <br/>Book repository for a broader self-teaching course ecosystem
+      <br/>Book repository for a broader self-teaching course ecosystem, including the methodological bridge from research to implementation
     </footer>
 
   </main>
